@@ -25,7 +25,7 @@ class Login extends React.Component {
   disabledButton = () => {
     const { email, password } = this.state;
     const MIN_PASSWORD = 6;
-    const regex = '[a-z0-9]+@[a-z]+.[a-z]{2,3}';
+    const regex = /\S+@\S+\.\S+/;
     if (email.match(regex) && password.length >= MIN_PASSWORD) {
       return this.setState({ isDisabled: false });
     }
