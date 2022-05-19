@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case CHANGE_EMAIL:
+  case 'CHANGE_EMAIL':
     return {
       ...state,
       email: action.payload,
