@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor() {
@@ -7,6 +8,7 @@ class Login extends React.Component {
       email: '',
       password: '',
       isDisabled: true,
+      logged: false,
     };
   }
 
@@ -21,14 +23,21 @@ class Login extends React.Component {
     const { email, password } = this.state;
     const MIN_PASSWORD = 6;
     const regex = '[a-z0-9]+@[a-z]+.[a-z]{2,3}';
-    if (email.match(regex) && password.length === MIN_PASSWORD) {
+    if (email.match(regex) && password.length >= MIN_PASSWORD) {
       return this.setState({ isDisabled: false });
     }
     return this.setState({ isDisabled: true });
   }
 
+  handleClick = () => {
+    const { logged } = this.state;
+    if (!logged) {
+      this.setState({ logged: true });
+    }
+  }
+
   render() {
-    const { isDisabled } = this.state;
+    const { isDisabled, logged } = this.state;
     return (
       <main>
         <form>
@@ -52,11 +61,13 @@ class Login extends React.Component {
             />
           </label>
           <button
-            type="submit"
+            type="button"
             disabled={ isDisabled }
+            onClick={ this.handleClick }
           >
             Entrar
           </button>
+          { logged && <Redirect to="/carteira" /> }
         </form>
       </main>
     );
