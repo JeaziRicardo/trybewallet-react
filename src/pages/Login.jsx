@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import userAction from '../actions';
 
 class Login extends React.Component {
@@ -86,4 +87,4 @@ const mapDispatchToProps = (dispatch) => ({
   changeEmail: (state) => dispatch(userAction(state)),
 });
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);
