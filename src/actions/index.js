@@ -1,6 +1,9 @@
-const userAction = (state) => ({
+export const userAction = (state) => ({
   type: 'CHANGE_EMAIL',
   payload: state,
 });
 
-export default userAction;
+export const walletAction = (state) => ({
+  type: 'CHANGE_CURRENCY',
+  payload: state,
+});
