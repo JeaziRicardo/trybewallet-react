@@ -3,19 +3,33 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      value_input: '',
+      description_input: '',
+      currencies: '',
+      method_input: '',
+      tag_input: '',
+    };
+  }
+
   render() {
     const { currencies } = this.props;
     return (
       <main>
         <form>
-          <label htmlFor="value-input">
+
+          <label htmlFor="value_input">
             Valor:
-            <input data-testid="value-input" type="number" id="value-input" />
+            <input data-testid="value-input" type="number" id="value_input" />
           </label>
-          <label htmlFor="description-input">
+
+          <label htmlFor="description_input">
             Descrição:
-            <input data-testid="description-input" type="text" id="description-input" />
+            <input data-testid="description-input" type="text" id="description_input" />
           </label>
+
           <label htmlFor="currencies">
             Moeda:
             <select id="currencies">
@@ -29,17 +43,19 @@ class Form extends Component {
               )) }
             </select>
           </label>
-          <label htmlFor="method-input">
+
+          <label htmlFor="method_input">
             Método de pagamento:
-            <select data-testid="method-input" id="method-input">
+            <select data-testid="method-input" id="method_input">
               <option value="cash">Dinheiro</option>
               <option value="credit">Cartão de crédito</option>
               <option value="debit">Cartão de débito</option>
             </select>
           </label>
-          <label htmlFor="tag-input">
+
+          <label htmlFor="tag_input">
             Categoria:
-            <select data-testid="tag-input" id="tag-input">
+            <select data-testid="tag-input" id="tag_input">
               <option value="food">Alimentação</option>
               <option value="leisure">Lazer</option>
               <option value="work">Trabalho</option>
@@ -47,9 +63,11 @@ class Form extends Component {
               <option value="health">Saúde</option>
             </select>
           </label>
+
           <button type="button">
             Adicionar despesa
           </button>
+
         </form>
       </main>
     );
