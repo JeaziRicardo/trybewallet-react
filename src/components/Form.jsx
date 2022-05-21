@@ -54,7 +54,7 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  currencies: PropTypes.arrayOf().isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 const mapStateToProps = (state) => ({
