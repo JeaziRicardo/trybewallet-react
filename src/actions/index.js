@@ -8,6 +8,11 @@ export const walletAction = (state) => ({
   payload: state,
 });
 
+export const expenseAction = (state) => ({
+  type: 'ADD_EXPENSE',
+  payload: state,
+});
+
 export function fetchCurrencies() {
   return async (dispatch) => {
     const request = await fetch('https://economia.awesomeapi.com.br/json/all');
