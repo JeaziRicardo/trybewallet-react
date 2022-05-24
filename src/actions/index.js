@@ -22,3 +22,11 @@ export function fetchCurrencies() {
     dispatch(walletAction(currencyUp));
   };
 }
+
+export function fetchExpense(state) {
+  return async (dispatch) => {
+    const request = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const exchangeRates = await request.json();
+    dispatch(expenseAction({ ...state, exchangeRates }));
+  };
+}

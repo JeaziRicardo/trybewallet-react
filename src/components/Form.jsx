@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { expenseAction } from '../actions';
+import { fetchExpense } from '../actions';
 
 class Form extends Component {
   constructor() {
@@ -135,7 +135,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addExpenses: (state) => dispatch(expenseAction(state)),
+  addExpenses: (state) => dispatch(fetchExpense(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
