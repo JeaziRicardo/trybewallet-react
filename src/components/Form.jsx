@@ -28,8 +28,8 @@ class Form extends Component {
       value: '',
       description: '',
       currency: 'USD',
-      method: '',
-      tag: '',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
     };
     addExpenses(this.state);
     this.setState({ ...resetState });
