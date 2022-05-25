@@ -28,8 +28,6 @@ class Form extends Component {
       value: '',
       description: '',
       currency: 'USD',
-      method: 'Dinheiro',
-      tag: 'Alimentação',
     };
     addExpenses(this.state);
     this.setState({ ...resetState });
@@ -64,11 +62,11 @@ class Form extends Component {
             />
           </label>
 
-          <label htmlFor="currencies">
+          <label htmlFor="currency">
             Moeda:
             <select
               onChange={ this.handleChange }
-              id="currencies"
+              id="currency"
               value={ currency }
             >
               { currencies.map((shortCurrency) => (
