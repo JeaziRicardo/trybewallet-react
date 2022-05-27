@@ -13,6 +13,11 @@ export const expenseAction = (state) => ({
   payload: state,
 });
 
+export const delExpenseAction = (state) => ({
+  type: 'DELETE_EXPENSE',
+  payload: state,
+});
+
 export function fetchCurrencies() {
   return async (dispatch) => {
     const request = await fetch('https://economia.awesomeapi.com.br/json/all');
