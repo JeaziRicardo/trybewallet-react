@@ -13,9 +13,9 @@ export const expenseAction = (state) => ({
   payload: state,
 });
 
-export const delExpenseAction = (state) => ({
+export const delExpenseAction = (id) => ({
   type: 'DELETE_EXPENSE',
-  payload: state,
+  payload: id,
 });
 
 export function fetchCurrencies() {
